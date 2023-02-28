@@ -1,8 +1,7 @@
 package taller3.televisores;
 
 public class Control {
-	
-	TV tv;
+TV tv;
 	
 	public void enlazar(TV tv) {
 		this.tv = tv;
@@ -35,15 +34,17 @@ public class Control {
 			tv.volumen--;
 		}
 	}
-	
+	public int getCanal() {
+		return tv.canal;
+	}
 	public void setCanal(int canal) {
-		this.tv.canal = canal;
+		if (tv.estado == true && canal >= 1 && canal <= 120) {
+			this.tv.canal = canal;
+		}
 	}
 	public void volumenUp() {
-		// TODO Auto-generated method stub
 		if (tv.estado == true && tv.volumen >= 0 && tv.volumen < 7) {
 			tv.volumen++;
 		}
 	}
-	
 }

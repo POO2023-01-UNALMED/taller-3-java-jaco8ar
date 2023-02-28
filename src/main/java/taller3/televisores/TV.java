@@ -19,9 +19,6 @@ public class TV {
 	public Control getControl() {
 		return control;
 	}
-	public int getCanal() {
-		return canal;
-	}
 	public int getPrecio() {
 		return precio;
 	}
@@ -34,6 +31,9 @@ public class TV {
 	public boolean getEstado() {
 		return estado;
 	}
+	public int getCanal() {
+		return canal;
+	}
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
@@ -41,7 +41,10 @@ public class TV {
 		this.control = control;
 	}
 	public void setCanal(int canal) {
-		this.canal = canal;
+		if (estado == true && canal >= 1 && canal <= 120) {
+			this.canal = canal;
+		}
+		
 	}
 	public void setPrecio(int precio) {
 		this.precio = precio;
@@ -79,5 +82,4 @@ public class TV {
 			volumen--;
 		}
 	}
-	
 }
